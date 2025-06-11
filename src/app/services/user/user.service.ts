@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {UserInfo} from "../../models/user/user";
-
+ 
 
 
 @Injectable({
@@ -43,6 +43,7 @@ export class UserService {
     return this.http.put<UserInfo>(`${this.apiUrl}/${userId}`, user, { headers });
   }
 
+  //delete
   deleteUser(userId: number): Observable<void> {
     const headers = this.getAuthHeaders();
     return this.http.patch<void>(`${this.apiUrl}/${userId}`, {},{ headers });
